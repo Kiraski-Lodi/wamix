@@ -221,6 +221,17 @@ header h1 {
   opacity: 0;
 }
 
+.admin_role-box .content {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
 .admin_role-box:hover .content {
   opacity: 1;
 }
