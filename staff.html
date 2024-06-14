@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warmix Staff</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo-container">
+        <img src="IMG/warmixLOGO.webp" alt="Warmix Staff Portal Logo" class="logo">
+      </a>
+      <h1 class="menu-title">Warmix Staff Portal</h1>
+      <ul class="menu">
+        <li><a href="index.html">Main</a></li>
+        <li class="active"><a href="staff.html">Staff</a></li>
+        <li><a href="promotion.html">Promotion</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="staff-table-container">
+        <table class="staff-table">
+            <thead>
+                <tr>
+                    <th class="sort" data-sort="nickname">Nickname</th>
+                    <th class="sort" data-sort="position">Position</th>
+                    <th class="sort" data-sort="vacation">Vacation</th>
+                    <th class="sort" data-sort="warn">Warn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wernex</td>
+                    <td>Основатель</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Avariuous</td>
+                    <td>Заместитель Основателя</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Kiraski</td>
+                    <td>Куратор</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Marfined</td>
+                    <td>Заместитель Куратора</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Sergey_Renamed</td>
+                    <td>Технический Администратор</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Ezzhoipaaaa</td>
+                    <td>Технический Администратор</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Sunrise</td>
+                    <td>Технический Администратор</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Flak36</td>
+                    <td>Главный Администратор</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>WARDENGRIEF</td>
+                    <td>Младший Администратор</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Demon_Praim</td>
+                    <td>Стажёр[админ]</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Ottoline</td>
+                    <td>Стажёр[админ]</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Crevetka</td>
+                    <td>Ивентолог</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>MAG1C</td>
+                    <td>Ивентолог</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Crevetka</td>
+                    <td>Модератор</td>
+                    <td>Нет</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .staff-table th.sort {
+        cursor: pointer; /* Установка указателя курсора при наведении */
+    }
+    .animate-enter {
+        animation: fadeIn 0.5s ease-out;
+    }
+    .animate-leave {
+        animation: fadeOut 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const table = document.querySelector('.staff-table');
+        const headers = table.querySelectorAll('.sort');
+
+        // Иерархия позиций с полными названиями
+        const positionPriority = {
+            'Основатель': 0,
+            'Заместитель Основателя': 1,
+            'Куратор': 2,
+            'Заместитель Куратора': 3,
+            'Технический Администратор': 4,
+            'Главный Администратор': 5,
+            'Заместитель Главного Администратора': 6,
+            'Старший Администратор': 7,
+            'Администратор': 8,
+            'Младший Администратор': 9,
+            'Хелпер': 10,
+            'Стажёр[админ]': 11,
+            'Главный Ивентолог': 12,
+            'Заместитель Главного Ивентолога': 13,
+            'Старший Ивентолог': 14,
+            'Ивентолог': 15,
+            'Младший Ивентолог': 16,
+            'Помощник Ивентолога': 17,
+            'Стажёр[ивент]': 18,
+            'Главный Модератор': 19,
+            'Заместитель Главного Модератора': 20,
+            'Старший Модератор': 21,
+            'Модератор': 22,
+            'Младший Модератор': 23,
+            'Стажёр[модератор]': 24
+        };
+
+        headers.forEach(header => {
+            header.addEventListener('mouseenter', () => {
+                header.style.cursor = 'pointer'; // Устанавливаем указатель курсора при наведении
+            });
+
+            header.addEventListener('click', () => {
+                const column = header.dataset.sort;
+                const order = header.dataset.order = -(header.dataset.order || -1);
+                const rows = Array.from(table.rows).slice(1);
+
+                rows.sort((rowA, rowB) => {
+                    const cellA = rowA.querySelector(`td:nth-child(${header.cellIndex + 1})`).textContent.trim();
+                    const cellB = rowB.querySelector(`td:nth-child(${header.cellIndex + 1})`).textContent.trim();
+
+                    if (column === 'position') {
+                        return order * (positionPriority[cellA] - positionPriority[cellB]);
+                    } else if (column === 'vacation') {
+                        return order * (cellA === cellB ? 0 : cellA === 'No' ? -1 : 1);
+                    } else if (column === 'warn') {
+                        return order * (Number(cellA) - Number(cellB));
+                    } else {
+                        return order * cellA.localeCompare(cellB);
+                    }
+                });
+
+                // Анимация при изменении порядка строк
+                rows.forEach((row, index) => {
+                    if (row !== table.rows[index + 1]) {
+                        const parent = row.parentNode;
+                        parent.removeChild(row);
+                        parent.insertBefore(row, parent.childNodes[index + 1]);
+                        row.classList.add('animate-enter');
+                        setTimeout(() => {
+                            row.classList.remove('animate-enter');
+                        }, 500);
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
